@@ -1,0 +1,102 @@
+[{
+	"year": 1999,
+	"total": 1.6,
+	"male": 2.1,
+	"female": 1.1
+},
+{
+	"year": 2000,
+	"total": 2.1,
+	"male": 2.9,
+	"female": 1.2
+},
+{
+	"year": 2001,
+	"total": 2.5,
+	"male": 3.4,
+	"female": 1.5
+},
+{
+	"year": 2002,
+	"total": 2.9,
+	"male": 4.0,
+	"female": 1.7
+},
+{
+	"year": 2003,
+	"total": 3.1,
+	"male": 4.3,
+	"female": 1.8
+},
+{
+	"year": 2004,
+	"total": 3.7,
+	"male": 5.2,
+	"female": 2.0
+},
+{
+	"year": 2005,
+	"total": 3.5,
+	"male": 5.0,
+	"female": 1.9
+},
+{
+	"year": 2006,
+	"total": 3.9,
+	"male": 5.6,
+	"female": 2.0
+},
+{
+	"year": 2007,
+	"total": 4.2,
+	"male": 6.2,
+	"female": 2.1
+},
+{
+	"year": 2008,
+	"total": 4.2,
+	"male": 6.1,
+	"female": 2.1
+},
+{
+	"year": 2009,
+	"total": 3.6,
+	"male": 5.2,
+	"female": 1.9
+},
+{
+	"year": 2010,
+	"total": 3.8,
+	"male": 5.3,
+	"female": 2.2
+},
+{
+	"year": 2011,
+	"total": 3.8,
+	"male": 5.4,
+	"female": 2.2
+},
+{
+	"year": 2012,
+	"total": 3.1,
+	"male": 4.4,
+	"female": 1.7
+},
+{
+	"year": 2013,
+	"total": 3.2,
+	"male": 4.3,
+	"female": 2.0
+},
+{
+	"year": 2014,
+	"total": 3.1,
+	"male": 4.0,
+	"female": 2.2
+},
+{
+	"year": 2015,
+	"total": 3.7,
+	"male": 4.6,
+	"female": 2.7
+}]

@@ -1,0 +1,27 @@
+html {
+	font-size: 14px;
+}
+
+body {
+	background-color: lightblue;
+	position: relative;
+}
+
+svg {
+	position: absolute;
+	left: calc(50% - 300px);
+}
+
+h2 {
+	text-align: center;
+	font-size: 1.8rem;
+	margin-bottom: 5rem;
+}
+
+.legend {
+  font-size: 1rem;
+}
+
+rect {
+  stroke-width: 2;
+}
