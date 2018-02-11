@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>D3 Practice</title>
+       <link rel="stylesheet" href="css/style.css">
+       <!--l <link rel="author" href="humans.txt"> -->
+    </head>
+    <body>
+    		<div id="container">
+    			<div id="chart" ></div>
+    			<div id="github_chart" ></div>
+    			<svg id="svg_circles" height="100" width="250" ></svg>
+    			<svg id="svg_line_chart" height="100" width="200" />
+    			<svg id="svg_line_chart_2" height="200" width="500" />
+    		</div>
+            <svg id="flight_chart" width="600" height="500">
+              <text class="time" x="300" y="50" text-anchor="middle">6:00</text>
+              <text class="origin-text" x="90" y="75" text-anchor="end">MEL</text>
+              <text class="dest-text" x="510" y="75" text-anchor="start">SYD</text>
+              <circle class="origin-dot" r="5" cx="100" cy="75" />
+              <circle class="dest-dot" r="5" cx="500" cy="75" />
+              <line class="origin-dest-line" x1="110" y1="75" x2="490" y2="75" />
+
+              <!-- for each flight in the current time -->
+              <g class="flight">
+                <text class="flight-id" x="160" y="100">JQ 500</text>
+                <line class="flight-line" x1="100" y1="100" x2="150" y2="100" />
+                <circle class="flight-dot" cx="150" cy="100" r="5" />
+              </g>
+            </svg>
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://momentjs.com/downloads/moment.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
