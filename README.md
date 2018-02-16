@@ -14,5 +14,6 @@ Starter kit for basic d3 visualizations
 #### Animated pie chart
 * View the [live site](earthtobetsy.info)
 #### Stacked Bar Chart
-* A v4 version of Mike Bostock's Stacked Bar Chart (https://bl.ocks.org/mbostock/1134768)
+* A v4 version of [Mike Bostock's Stacked Bar Chart](https://bl.ocks.org/mbostock/1134768)
+* View bl.ock [here](https://bl.ocks.org/mell0kat/33803ef68aa3b7f1e4d26b83d4a3deb0/d2b94451a88da61b8680b63d0274b69757455e4c)
 
