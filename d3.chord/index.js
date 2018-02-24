@@ -9,16 +9,15 @@ const debits = []
 const credits = []
 
 // chord layout for computing angles of chords
-
 const layout = d3.chord()
 	.sortGroups(d3.descending)
 	.sortSubgroups(d3.descending)
 	.sortChords(d3.descending)
-	.padAngle(.04)
+	.padAngle(.02)
 
 // Color scale for "risk"
 const fill = d3.scaleOrdinal()
-	.domain([0, 1, 2])
+	.domain([0, 1, 2]) // question: what's the significance of these numbers?
 	. range(["#DB704D", "#D2D0C6", "#ECD08D", "#F8EDD3"])
 
 // This is for creating donut chart around the circle (for groups)
@@ -26,10 +25,11 @@ const arc = d3.arc()
 	.innerRadius(innerRadius)
 	.outerRadius(outerRadius)
 
-// chord generator for the chords
-const ribbon = d3.ribbon() //???
+// ribbon generator for the chords
+const ribbon = d3.ribbon()
 	.radius(innerRadius)
 
+// creating two divs, one to hold debits, one to hold credits
 const svg = d3.select('body')
 	.selectAll('div')
 	.data([debits, credits])
@@ -52,7 +52,7 @@ const formatRow = (row) => {
 	const _row = {}
 	_row.amount = +row.amount
 	_row.risk = +row.risk
-	_row.valueOf = value // for chord layout
+	_row.valueOf = value // for chord layout -- question: where is this being used
 	return { ...row, ..._row}
 }
 
@@ -69,7 +69,6 @@ d3.csv('http://localhost:8000/debts.csv', formatRow, (data) => {
 			d.creditor = countryByName.get(d.creditor)
 		} else {
 			countryByName.set(d.creditor, d.creditor = { name: d.creditor, index: ++countryIndex })
-
 		}
 		if (countryByName.has(d.debtor)) {
 			d.debtor = countryByName.get(d.debtor)
@@ -98,9 +97,8 @@ d3.csv('http://localhost:8000/debts.csv', formatRow, (data) => {
 	})
 
 	svg.each(function(matrix, j){
-		console.log('MATRIX', matrix)
-		const svg = d3.select(this)
 
+		const svg = d3.select(this)
 
 		svg.selectAll('.chord')
 			.data(layout(matrix))
@@ -110,9 +108,7 @@ d3.csv('http://localhost:8000/debts.csv', formatRow, (data) => {
 			.style('stroke', d => d3.rgb(fill(d.source.value.risk)).darker())
 			.attr('d', ribbon)
 			.append('title')
-			.text(d => { console.log(d)
-				if (!d.source.value.debtor) { return `W in progress`}
-				return `${d.source.value.debtor.name} owes  ${d.source.value.creditor.name} $${numFormat(d.source.value)} B.`})
+			.text(d => `${d.source.value.debtor.name} owes ${d.source.value.creditor.name} $${numFormat(d.source.value)} B.`)
 
 		// Add groups
 		const g = svg.selectAll('.group')
@@ -137,12 +133,4 @@ d3.csv('http://localhost:8000/debts.csv', formatRow, (data) => {
 			.text(d => countryByIndex[d.index].name)
 
 	})
-
 })
-
-//d3.arc can be using for labeling groups
-// using d3.format to format numbers, sig figs, commas etc
-
-//leran about row formatting function
-
-//text path is used to draw text along a path (incluude an href attr with a reference to the path)
